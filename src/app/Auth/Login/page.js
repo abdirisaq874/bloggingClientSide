@@ -7,10 +7,10 @@ import { redirect } from 'next/navigation';
 const FechtCurrentUser = async (cookieData) => {
   try {
     const currentUser = await axios.get(
-      'https://bloggingbackend.azurewebsites.net/api/v1/users/showMe'
-      // {
-      //   headers: { Cookie: cookieData },
-      // }
+      'https://bloggingbackend.azurewebsites.net/api/v1/users/showMe',
+      {
+        headers: { Cookie: cookieData },
+      }
     );
     return currentUser.data;
   } catch (error) {
@@ -23,6 +23,7 @@ const Page = async () => {
   const currentUser = await FechtCurrentUser(cookieData);
 
   console.log('Cookie data: ', cookieData);
+  console.log('cookieData: ', cookies());
   console.log(currentUser);
 
   return currentUser ? redirect('/') : <Login cookieData={cookieData} />;
