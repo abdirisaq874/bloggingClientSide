@@ -1,18 +1,12 @@
 import Header from '@/Components/Header';
-import { Footer } from 'flowbite-react';
+import Footer from '@/Components/Footer';
 
-export const metadata = {
-  title: 'Blog posts',
-  description: 'Blog posts',
-};
-
-export default function blogsLayout({ children }) {
+export default function BlogsLayout({ children }) {
   return (
-    <>
+    <div>
       <Header />
       {children}
-
       <Footer />
-    </>
+    </div>
   );
 }
