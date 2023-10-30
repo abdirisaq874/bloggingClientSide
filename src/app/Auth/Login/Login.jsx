@@ -4,13 +4,10 @@ import { useLoginUserMutation } from '../../../store';
 import Link from 'next/link';
 import LoadingButton from '@/Components/LoadingButton';
 import { useRouter } from 'next/navigation';
-import { cookies } from 'next/headers';
 
 const Login = (cookieData) => {
   console.log('Login', cookieData);
   console.log(cookieData);
-  console.log('cookies().getAll()');
-  console.log(cookies().getAll());
   const router = useRouter();
   const [LoginUser, status] = useLoginUserMutation();
 
