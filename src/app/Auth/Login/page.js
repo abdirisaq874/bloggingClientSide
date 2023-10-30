@@ -5,11 +5,12 @@ import axios from 'axios';
 import { redirect } from 'next/navigation';
 
 const FechtCurrentUser = async () => {
+  const cookieData = cookies().getAll();
   try {
     const currentUser = await axios.get(
       'https://bloggingbackend.azurewebsites.net/api/v1/users/showMe',
       {
-        headers: { Cookie: cookies().toString() },
+        headers: { Cookie: cookieData },
       }
     );
     return currentUser.data;
