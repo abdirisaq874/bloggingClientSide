@@ -5,7 +5,8 @@ import Link from 'next/link';
 import LoadingButton from '@/Components/LoadingButton';
 import { useRouter } from 'next/navigation';
 
-const Login = () => {
+const Login = (cookieData) => {
+  console.log(cookieData);
   const router = useRouter();
   const [LoginUser, status] = useLoginUserMutation();
 

@@ -4,9 +4,7 @@ import { cookies } from 'next/headers';
 import axios from 'axios';
 import { redirect } from 'next/navigation';
 
-const FechtCurrentUser = async () => {
-  const cookieData = cookies().toString();
-  console.log('Cookie data: ', cookieData);
+const FechtCurrentUser = async (cookieData) => {
   try {
     const currentUser = await axios.get(
       'https://bloggingbackend.azurewebsites.net/api/v1/users/showMe',
@@ -21,10 +19,13 @@ const FechtCurrentUser = async () => {
 };
 
 const Page = async () => {
-  const currentUser = await FechtCurrentUser();
+  const cookieData = cookies().toString();
+  const currentUser = await FechtCurrentUser(cookieData);
+
+  console.log('Cookie data: ', cookieData);
   console.log(currentUser);
 
-  return currentUser ? redirect('/') : <Login />;
+  return currentUser ? redirect('/') : <Login cookieData={cookieData} />;
 };
 
 export default Page;
