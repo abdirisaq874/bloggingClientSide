@@ -3,8 +3,6 @@
 import ReduxProvider from '@/store/Provider';
 import './globals.css';
 import ToastProvider from './ToastProvider';
-import Footer from '@/Components/Footer';
-import Header from '@/Components/Header';
 import BubblesComponents from '@/Components/BubblesComponents';
 
 export const metadata = {
