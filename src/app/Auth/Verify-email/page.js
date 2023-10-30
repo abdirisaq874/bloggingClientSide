@@ -9,7 +9,7 @@ export const metadata = {
 const FetchVerifyEmail = async (verificationToken, email) => {
   try {
     const data = await axios.post(
-      'http://localhost:4000/api/v1/auth/verify-email',
+      'https://bloggingbackend.azurewebsites.net/api/v1/auth/verify-email',
       { verificationToken, email }
     );
     console.log(data);

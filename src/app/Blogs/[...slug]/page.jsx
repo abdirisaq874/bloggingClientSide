@@ -6,7 +6,7 @@ import Blogs from './Blog';
 const FechtCurrentUser = async () => {
   try {
     const currentUser = await axios.get(
-      'http://localhost:4000/api/v1/users/showMe',
+      'https://bloggingbackend.azurewebsites.net/api/v1/users/showMe',
       {
         headers: { Cookie: cookies().toString() },
       }
@@ -19,9 +19,12 @@ const FechtCurrentUser = async () => {
 
 const fetchSingleBlog = async (slug) => {
   try {
-    const blog = await axios.get(`http://localhost:4000/api/v1/blogs/${slug}`, {
-      headers: { Cookie: cookies().toString() },
-    });
+    const blog = await axios.get(
+      `https://bloggingbackend.azurewebsites.net/api/v1/blogs/${slug}`,
+      {
+        headers: { Cookie: cookies().toString() },
+      }
+    );
     return blog.data;
   } catch (error) {
     console.log(error);

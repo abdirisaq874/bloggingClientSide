@@ -16,7 +16,7 @@ const ProductsAPI = createApi({
     //   await pause(100);
     //   return fetch(...args);
     // },
-    baseUrl: 'http://localhost:4000/api/v1',
+    baseUrl: 'https://bloggingbackend.azurewebsites.net/api/v1',
 
     credentials: 'include',
   }),

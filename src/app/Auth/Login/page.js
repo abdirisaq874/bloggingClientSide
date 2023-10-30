@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation';
 const FechtCurrentUser = async () => {
   try {
     const currentUser = await axios.get(
-      'http://localhost:4000/api/v1/users/showMe',
+      'https://bloggingbackend.azurewebsites.net/api/v1/users/showMe',
       {
         headers: { Cookie: cookies().toString() },
       }

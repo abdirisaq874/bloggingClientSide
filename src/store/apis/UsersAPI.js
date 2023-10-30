@@ -11,7 +11,7 @@ const pause = (duration) => {
 const UsersApi = createApi({
   reducerPath: 'Users',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:4000/api/v1/auth',
+    baseUrl: 'https://bloggingbackend.azurewebsites.net/api/v1/auth',
     fetchFn: async (...args) => {
       // REMOVE FOR PRODUCTION
       await pause(1000);
