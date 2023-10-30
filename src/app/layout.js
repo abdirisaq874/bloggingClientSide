@@ -31,9 +31,7 @@ export default function RootLayout({ children }) {
             <div className="fixed w-full h-full top-0 left-0 z-50 pointer-events-none">
               <BubblesComponents times={10} />
             </div>
-            <Header />
             {children}
-            <Footer />
           </ToastProvider>
         </ReduxProvider>
       </body>

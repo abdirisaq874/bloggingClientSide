@@ -4,5 +4,12 @@ export const metadata = {
 };
 
 export default function blogsLayout({ children }) {
-  return <>{children}</>;
+  return (
+    <>
+      <Header />
+      {children}
+
+      <Footer />
+    </>
+  );
 }
