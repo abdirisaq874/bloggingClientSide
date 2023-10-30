@@ -19,13 +19,13 @@ const FechtCurrentUser = async (cookieData) => {
 };
 
 const Page = async () => {
-  const cookieData = cookies().getAll();
+  const cookieData = cookies().toString();
   const currentUser = await FechtCurrentUser(cookieData);
 
   console.log('Cookie data: ', cookieData);
   console.log(currentUser);
 
-  return <Login cookieData={cookieData} />;
+  return currentUser ? redirect('/') : <Login cookieData={cookieData} />;
 };
 
 export default Page;
