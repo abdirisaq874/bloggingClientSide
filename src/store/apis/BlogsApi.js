@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const BlogsAPI = createApi({
   reducerPath: 'blogs',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://bloggingbackend.azurewebsites.net/api/v1',
+    baseUrl: 'https://backend.mandeez.online/api/v1',
     credentials: 'include',
   }),
   endpoints(builder) {

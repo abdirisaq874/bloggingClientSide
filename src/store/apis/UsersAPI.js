@@ -11,7 +11,7 @@ const pause = (duration) => {
 const UsersApi = createApi({
   reducerPath: 'Users',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://bloggingbackend.azurewebsites.net/api/v1/auth',
+    baseUrl: 'https://backend.mandeez.online/api/v1/auth',
     fetchFn: async (...args) => {
       // REMOVE FOR PRODUCTION
       await pause(1000);
